@@ -41,6 +41,7 @@ module.exports = {
     "react-native/no-raw-text": "off",
     "no-param-reassign": "off",
     "no-underscore-dangle": "off",
+    "react/prop-types": "[<enabled>, { ignore: <ignore>, customValidators: <customValidator>, skipUndeclared: <skipUndeclared> }]",
     "import/prefer-default-export": "off",
     "react/state-in-constructor": "off",
     "react/static-property-placement": "off",

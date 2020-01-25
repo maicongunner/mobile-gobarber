@@ -5,7 +5,7 @@ export const Container = styled.View`
   flex: 1;
 `;
 
-export const ProviderList = styled.FlatList.attrs({
+export const ProvidersList = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
   numColumns: 2,
 })`

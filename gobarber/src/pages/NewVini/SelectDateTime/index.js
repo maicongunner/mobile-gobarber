@@ -39,20 +39,20 @@ export default function SelectDateTime({ navigation }) {
     <Background>
       <Container>
         <DateInput date={date} onChange={setDate} />
-
-        <HourList
-          data={hours}
-          keyExtractor={item => String(item.time)}
-          renderItem={({ item }) => (
-            <Hour
-              onPress={() => handleSelectHour(item.value)}
-              enabled={item.available}
-            >
-              <Title>{item.time}</Title>
-            </Hour>
-          )}
-        />
       </Container>
+
+      <HourList
+        data={hours}
+        keyExtractor={item => String(item.time)}
+        renderItem={({ item }) => (
+          <Hour
+            onPress={() => handleSelectHour(item.value)}
+            enabled={item.available}
+          >
+            <Title>{item.time}</Title>
+          </Hour>
+        )}
+      />
     </Background>
   );
 }

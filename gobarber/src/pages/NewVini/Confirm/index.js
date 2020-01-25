@@ -13,13 +13,13 @@ export default function Confirm({ navigation }) {
   const provider = navigation.getParam('provider');
   const time = navigation.getParam('time');
 
-  const dateFormatted = useMemo(
+  const dateFormated = useMemo(
     () => formatRelative(parseISO(time), new Date(), { locale: pt }),
     [time]
   );
 
   async function handleAddAppointment() {
-    await api.post('appointments', {
+    await api.post(`appointments`, {
       provider_id: provider.id,
       date: time,
     });
@@ -33,14 +33,14 @@ export default function Confirm({ navigation }) {
         <Avatar
           source={{
             uri: provider.avatar
-              ? provider.avatar.url.replace('localhost', '192.168.56.1')
-              : `https://api.adorable.io/avatars/50/${provider.name}.png`,
+              ? provider.avatar.url.replace('localhost', '192.168.0.15')
+              : `https://api.adorable.io/avatar/50/${provider.name}.png`,
           }}
         />
         <Name>{provider.name}</Name>
-        <Time>{dateFormatted}</Time>
+        <Time>{dateFormated}</Time>
 
-        <SubmitButton onPress={() => handleAddAppointment()}>
+        <SubmitButton onPress={handleAddAppointment}>
           Confirmar agendamento
         </SubmitButton>
       </Container>
